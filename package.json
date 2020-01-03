@@ -1,0 +1,33 @@
+{
+  "name": "html2pdf-as-a-service",
+  "version": "1.0.0",
+  "description": "Convert HTML to PDF as a Service",
+  "main": "index.js",
+  "engines": {
+    "node": "=10.15.3"
+  },
+  "author": "Denis Volokh <denis.volokh@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mediasuitenz/pdf-service.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "pdf",
+    "html",
+    "service"
+  ],
+  "dependencies": {
+    "axios": "^0.19.0",
+    "commander": "^2.19.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "^2.2.0",
+    "execa": "^0.4.0",
+    "express": "^4.13.4",
+    "express-async-handler": "^1.1.4",
+    "minimist": "^1.2.0",
+    "morgan": "~1.9.0",
+    "puppeteer": "^1.13.0",
+    "tmp": "0.0.28"
+  }
+}
