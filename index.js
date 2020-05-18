@@ -19,17 +19,15 @@ app.post('/data', function(req, resp) {
 app.post('/html2pdf', asyncHandler(async (req, resp, next) => {
     console.log("[+] Request Body", req.body);
 
-    if (!("url" in req.body) || req.body.url == "") {
-        try {
-            console.log("[+] Trying to create PDF with url:", req.body.url);
+    try {
+        console.log("[+] Trying to create PDF with url:", req.body.url);
 
-            const pdf_path_filename = await actions.html2pdf(req.body)
-            resp.setHeader('Content-disposition', 'attachment; filename=' + pdf_path_filename)
-            resp.download(pdf_path_filename)
+        const pdf_path_filename = await actions.html2pdf(req.body)
+        resp.setHeader('Content-disposition', 'attachment; filename=' + pdf_path_filename)
+        resp.download(pdf_path_filename)
 
-        } catch (e) {
-            resp.status(400).send('Failed to convert to PDF file: ' + e.message)
-        }
+    } catch (e) {
+        resp.status(400).send('Failed to convert to PDF file: ' + e.message)
     }
 
     // if (req.query == undefined) {
