@@ -17,7 +17,7 @@ app.post('/data', function(req, resp) {
 })
 
 app.post('/html2pdf', asyncHandler(async (req, resp, next) => {
-    console.log("[+] Request Body", req.body.url);
+    console.log("[+] Request Body", req.body);
 
     if (!("url" in req.body) || req.body.url == "") {
         try {
